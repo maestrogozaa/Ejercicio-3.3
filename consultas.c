@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	scanf ("%s", nombre);
 	
 	char consulta [80];
-	strcpy (consulta,"SELECT MAX(puntuacion) AS puntuacion_maxima FROM Partidas WHERE id_jugador = '");
+	strcpy (consulta,"SELECT MAX(puntuacion) AS puntuacion_maxima FROM Partida WHERE id_jugador = '");
 	strcat (consulta, nombre);
 	err=mysql_query (conn, consulta);
 	if (err!=0) {
@@ -58,7 +58,7 @@ int main(int argc, char **argv)
 	}
 
 	char consulta [80];
-	strcpy (consulta,"SELECT COUNT(*) AS numero_partidas FROM Partidas WHERE id_jugador = '");
+	strcpy (consulta,"SELECT COUNT(*) AS numero_partidas FROM Partida WHERE id_jugador = '");
 	strcat (consulta, nombre);
 	err=mysql_query (conn, consulta);
 	if (err!=0) {
